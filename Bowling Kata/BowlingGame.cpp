@@ -10,9 +10,13 @@
 #include "BowlingGame.h"
 
 const int BowlingGame::score(){
-	return _scoreTotal;
+	unsigned int scoreTotal = 0;
+	for (auto shot : _shots){
+		scoreTotal += shot;
+	}
+	return scoreTotal;
 }
 
 void BowlingGame::addShot(unsigned int pins){
-	_scoreTotal += pins;
+	_shots.push_back(pins);
 }

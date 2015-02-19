@@ -8,17 +8,21 @@
 
 #ifndef Bowling_Kata_BowlingGame_h
 #define Bowling_Kata_BowlingGame_h
+#include <vector>
+
+/* Class invarients:
+	addShot may not be called more than 21 times (number of shots in a game).
+*/
 
 class BowlingGame {
 public:
 	BowlingGame(){
-		_scoreTotal = 0;
 	}
 	const int score();
 	void addShot (unsigned int pins);
 
 private:
-	unsigned int _scoreTotal;
+	std::vector <unsigned int> _shots;
 };
 
 #endif

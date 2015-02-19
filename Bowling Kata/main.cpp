@@ -9,37 +9,37 @@
 TEST_CASE("Scores a game of bowling.", "BowlingGame")
 {
 	SECTION("BowlingGame class trivial"){
-		BowlingGame game1;
+		BowlingGame gameT;
 
-		REQUIRE(game1.score() == 0);
+		REQUIRE(gameT.score() == 0);
 
 		// First frame - 9 pins, open
-		game1.addShot(1);
-		REQUIRE(game1.score() == 1);
-		game1.addShot(8);
-		REQUIRE(game1.score() == 9);
+		gameT.addShot(1);
+		REQUIRE(gameT.score() == 1);
+		gameT.addShot(8);
+		REQUIRE(gameT.score() == 9);
 
 		// Second frame - 9 pins, open
-		game1.addShot(5);
-		game1.addShot(4);
-		REQUIRE(game1.score() == 18);
+		gameT.addShot(5);
+		gameT.addShot(4);
+		REQUIRE(gameT.score() == 18);
 	}
 
 	SECTION("BowlingGame class spare"){
-		BowlingGame game1;
+		BowlingGame gameT;
 
-		REQUIRE(game1.score() == 0);
+		REQUIRE(gameT.score() == 0);
 
 		// First frame - spare
-		game1.addShot(1);
-		REQUIRE(game1.score() == 1);
-		game1.addShot(9);
-		REQUIRE(game1.score() == 10);
+		gameT.addShot(1);
+		REQUIRE(gameT.score() == 1);
+		gameT.addShot(9);
+		REQUIRE(gameT.score() == 10);
 
 		// Second frame - after spare
-		game1.addShot(5);
-		game1.addShot(4);
-		REQUIRE(game1.score() == 24);
+		gameT.addShot(5);
+		gameT.addShot(4);
+		REQUIRE(gameT.score() == 24);
 	}
 
 }
