@@ -44,4 +44,26 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		REQUIRE(gameT.score() == 24);
 	}
 
+	SECTION("BowlingGame class strike"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// First frame - 8 pins, open
+		gameT.addShot(5);
+		REQUIRE(gameT.score() == 5);
+		gameT.addShot(3);
+		REQUIRE(gameT.score() == 8);
+
+		// Second frame - 8 pins, open
+		gameT.addShot(2);
+		REQUIRE(gameT.score() == 10);
+		gameT.addShot(6);
+		REQUIRE(gameT.score() == 16);
+
+		// Second frame - strike
+		gameT.addShot(10);
+		REQUIRE(gameT.score() == 26);
+	}
+
 }

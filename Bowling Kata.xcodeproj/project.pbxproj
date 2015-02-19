@@ -9,20 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D70EDEC1A956B8E00684752 /* BowlingGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D70EDEB1A956B8E00684752 /* BowlingGame.cpp */; };
 		3DA07EB61A955D78003CF888 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07EB51A955D78003CF888 /* main.cpp */; };
-		3DA07FFB1A95623E003CF888 /* assertions.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F211A95623E003CF888 /* assertions.md */; };
-		3DA07FFC1A95623E003CF888 /* build-systems.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F221A95623E003CF888 /* build-systems.md */; };
-		3DA07FFD1A95623E003CF888 /* command-line.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F231A95623E003CF888 /* command-line.md */; };
-		3DA07FFE1A95623E003CF888 /* contributing.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F241A95623E003CF888 /* contributing.md */; };
-		3DA07FFF1A95623E003CF888 /* logging.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F251A95623E003CF888 /* logging.md */; };
-		3DA080001A95623E003CF888 /* own-main.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F261A95623E003CF888 /* own-main.md */; };
-		3DA080011A95623E003CF888 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F271A95623E003CF888 /* Readme.md */; };
-		3DA080021A95623E003CF888 /* slow-compiles.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F281A95623E003CF888 /* slow-compiles.md */; };
-		3DA080031A95623E003CF888 /* test-cases-and-sections.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F291A95623E003CF888 /* test-cases-and-sections.md */; };
-		3DA080041A95623E003CF888 /* test-fixtures.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F2A1A95623E003CF888 /* test-fixtures.md */; };
-		3DA080051A95623E003CF888 /* tutorial.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F2B1A95623E003CF888 /* tutorial.md */; };
-		3DA080061A95623E003CF888 /* whats-changed.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F2C1A95623E003CF888 /* whats-changed.md */; };
-		3DA080071A95623E003CF888 /* why-catch.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F2D1A95623E003CF888 /* why-catch.md */; };
-		3DA080321A95623E003CF888 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07FF21A95623E003CF888 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -407,22 +393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DA07FFE1A95623E003CF888 /* contributing.md in Sources */,
-				3DA07FFC1A95623E003CF888 /* build-systems.md in Sources */,
-				3DA080051A95623E003CF888 /* tutorial.md in Sources */,
-				3DA080071A95623E003CF888 /* why-catch.md in Sources */,
-				3DA080031A95623E003CF888 /* test-cases-and-sections.md in Sources */,
 				3DA07EB61A955D78003CF888 /* main.cpp in Sources */,
-				3DA07FFD1A95623E003CF888 /* command-line.md in Sources */,
-				3DA080021A95623E003CF888 /* slow-compiles.md in Sources */,
-				3DA080001A95623E003CF888 /* own-main.md in Sources */,
-				3DA080061A95623E003CF888 /* whats-changed.md in Sources */,
-				3DA07FFF1A95623E003CF888 /* logging.md in Sources */,
-				3DA080041A95623E003CF888 /* test-fixtures.md in Sources */,
 				3D70EDEC1A956B8E00684752 /* BowlingGame.cpp in Sources */,
-				3DA080321A95623E003CF888 /* README.md in Sources */,
-				3DA080011A95623E003CF888 /* Readme.md in Sources */,
-				3DA07FFB1A95623E003CF888 /* assertions.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
