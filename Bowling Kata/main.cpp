@@ -13,14 +13,16 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 
 		REQUIRE(game1.score() == 0);
 
+		// First frame - spare
 		game1.addShot(1);
 		REQUIRE(game1.score() == 1);
+		game1.addShot(9);
+		REQUIRE(game1.score() == 10);
 
+		// Second frame - after spare
+		game1.addShot(5);
 		game1.addShot(4);
-		REQUIRE(game1.score() == 5);
-
-		game1.addShot(6);
-		REQUIRE(game1.score() == 11);
+		REQUIRE(game1.score() == 24);
 	}
 }
 
