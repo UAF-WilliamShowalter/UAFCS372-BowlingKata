@@ -64,6 +64,14 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		// Second frame - strike
 		gameT.addShot(10);
 		REQUIRE(gameT.score() == 26);
+
+		// Third frame - 8 pins, open
+		gameT.addShot(6);
+		REQUIRE(gameT.score() == 38);
+
+		// Third frame - 8 pins, open
+		gameT.addShot(2);
+		REQUIRE(gameT.score() == 42);
 	}
 
 }
