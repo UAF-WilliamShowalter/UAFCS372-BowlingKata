@@ -1,17 +1,16 @@
-//
-//  main.cpp
-//  Bowling Kata
-//
-//  Created by William Showalter on 15/02/18.
-//  Copyright (c) 2015 William Showalter. All rights reserved.
-//
+//  Created by William Showalter on 2015/02/18.
+//	TDD Bowling Kata for CS 372
 
-#include <iostream>
-
-// Include Catch library for testing
+// Include Catch library for testing - using Catch's main.
+#define CATCH_CONFIG_MAIN
 #include "../Catch/single_include/catch.hpp"
 
-int main(int argc, const char * argv[]) {
+TEST_CASE("Scores a game of bowling.", "BowlingGame")
+{
+	SECTION("BowlingGame class"){
+		BowlingGame game1;
 
-    return 0;
+		REQUIRE(game1.score == 0);
+	}
 }
+
