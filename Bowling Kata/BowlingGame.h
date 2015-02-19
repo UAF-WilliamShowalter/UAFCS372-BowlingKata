@@ -32,7 +32,15 @@ public:
 
 private:
 	unsigned int scoreFrame(unsigned int frameNumber);
-	const bool ifShotsOdd ();
+
+	const bool isFrameFull ();
+	const bool isFrameEmpty (unsigned int currentFrame);
+	const bool shotsNextFrame (unsigned int currentFrame);
+	
+	const unsigned int firstShotFrame (unsigned int frameNumber);
+	const unsigned int nextShotsInFrame (unsigned int frameNumber);
+	const bool isSpare(unsigned int currentFrame, unsigned int frameScore);
+
 
 private:
 	std::vector <unsigned int> _shots;
