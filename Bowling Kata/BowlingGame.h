@@ -11,6 +11,9 @@
 
 class BowlingGame {
 public:
+	BowlingGame(){
+		_scoreTotal = 0;
+	}
 	const int score();
 	void addShot (unsigned int pins);
 

@@ -8,7 +8,24 @@
 
 TEST_CASE("Scores a game of bowling.", "BowlingGame")
 {
-	SECTION("BowlingGame class"){
+	SECTION("BowlingGame class trivial"){
+		BowlingGame game1;
+
+		REQUIRE(game1.score() == 0);
+
+		// First frame - 9 pins, open
+		game1.addShot(1);
+		REQUIRE(game1.score() == 1);
+		game1.addShot(8);
+		REQUIRE(game1.score() == 9);
+
+		// Second frame - 9 pins, open
+		game1.addShot(5);
+		game1.addShot(4);
+		REQUIRE(game1.score() == 18);
+	}
+
+	SECTION("BowlingGame class spare"){
 		BowlingGame game1;
 
 		REQUIRE(game1.score() == 0);
@@ -24,5 +41,6 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		game1.addShot(4);
 		REQUIRE(game1.score() == 24);
 	}
+
 }
 
