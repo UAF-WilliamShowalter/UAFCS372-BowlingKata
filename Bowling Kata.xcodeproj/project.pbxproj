@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D70EDEC1A956B8E00684752 /* BowlingGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D70EDEB1A956B8E00684752 /* BowlingGame.cpp */; };
 		3DA07EB61A955D78003CF888 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07EB51A955D78003CF888 /* main.cpp */; };
 		3DA07FFB1A95623E003CF888 /* assertions.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F211A95623E003CF888 /* assertions.md */; };
 		3DA07FFC1A95623E003CF888 /* build-systems.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA07F221A95623E003CF888 /* build-systems.md */; };
@@ -37,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D70EDEA1A956B2100684752 /* BowlingGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BowlingGame.h; sourceTree = "<group>"; };
+		3D70EDEB1A956B8E00684752 /* BowlingGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BowlingGame.cpp; sourceTree = "<group>"; };
 		3DA07EB21A955D78003CF888 /* Bowling Kata */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Bowling Kata"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA07EB51A955D78003CF888 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3DA07F211A95623E003CF888 /* assertions.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = assertions.md; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				3DA07EB51A955D78003CF888 /* main.cpp */,
+				3D70EDEA1A956B2100684752 /* BowlingGame.h */,
+				3D70EDEB1A956B8E00684752 /* BowlingGame.cpp */,
 			);
 			path = "Bowling Kata";
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				3DA080061A95623E003CF888 /* whats-changed.md in Sources */,
 				3DA07FFF1A95623E003CF888 /* logging.md in Sources */,
 				3DA080041A95623E003CF888 /* test-fixtures.md in Sources */,
+				3D70EDEC1A956B8E00684752 /* BowlingGame.cpp in Sources */,
 				3DA080321A95623E003CF888 /* README.md in Sources */,
 				3DA080011A95623E003CF888 /* Readme.md in Sources */,
 				3DA07FFB1A95623E003CF888 /* assertions.md in Sources */,
