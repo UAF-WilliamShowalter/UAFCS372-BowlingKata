@@ -12,6 +12,10 @@
 class BowlingGame {
 public:
 	const int score();
+	void addShot (unsigned int pins);
+
+private:
+	unsigned int _scoreTotal;
 };
 
 #endif

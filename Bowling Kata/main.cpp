@@ -13,8 +13,14 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 
 		REQUIRE(game1.score() == 0);
 
-		game1.addFrame(1);
+		game1.addShot(1);
 		REQUIRE(game1.score() == 1);
+
+		game1.addShot(4);
+		REQUIRE(game1.score() == 5);
+
+		game1.addShot(6);
+		REQUIRE(game1.score() == 11);
 	}
 }
 

@@ -10,5 +10,9 @@
 #include "BowlingGame.h"
 
 const int BowlingGame::score(){
-	return 0;
+	return _scoreTotal;
+}
+
+void BowlingGame::addShot(unsigned int pins){
+	_scoreTotal += pins;
 }
