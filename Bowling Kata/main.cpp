@@ -45,4 +45,3 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 	}
 
 }
-

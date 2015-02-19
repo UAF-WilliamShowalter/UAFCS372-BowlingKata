@@ -51,3 +51,7 @@ unsigned int BowlingGame::scoreFrame(unsigned int frameNumber){
 
 	return frameScore;
 }
+
+const bool BowlingGame::ifShotsOdd (){
+	return false;
+}

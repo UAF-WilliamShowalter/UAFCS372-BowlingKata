@@ -31,8 +31,10 @@ public:
 	void addShot (unsigned int pins);
 
 private:
-	unsigned int scoreFrame(unsigned int frame);
+	unsigned int scoreFrame(unsigned int frameNumber);
+	const bool ifShotsOdd ();
 
+private:
 	std::vector <unsigned int> _shots;
 };
 
