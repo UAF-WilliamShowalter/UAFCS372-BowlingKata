@@ -8,7 +8,10 @@
 
 #include <iostream>
 
+// Include Catch library for testing
+#include "../Catch/include/catch.hpp"
+
 int main(int argc, const char * argv[]) {
-	
+
     return 0;
 }
