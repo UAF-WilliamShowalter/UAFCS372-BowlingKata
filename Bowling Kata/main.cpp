@@ -9,7 +9,7 @@
 #include <iostream>
 
 // Include Catch library for testing
-#include "../Catch/include/catch.hpp"
+#include "../Catch/single_include/catch.hpp"
 
 int main(int argc, const char * argv[]) {
 
