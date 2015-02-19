@@ -12,7 +12,8 @@
 const unsigned int BowlingGame::score(){
 	unsigned int scoreTotal = 0;
 	for (auto frameNum = 0; frameNum < FRAMES_PER_GAME; frameNum++){
-		scoreTotal += scoreFrame(frameNum);
+		auto thisFrame = scoreFrame(frameNum);
+		scoreTotal += thisFrame;
 	}
 	return scoreTotal;
 }
@@ -32,12 +33,20 @@ unsigned int BowlingGame::scoreFrame(unsigned int frameNumber){
 	// Has at least first shot
 	auto frameScore = _shots[frameNumber*SHOTS_PER_FRAME];
 
-	// All frames full
-	if (!(numberOfShotsTaken % SHOTS_PER_FRAME)){
+	// Strike?
+	if (frameScore == STRIKE)
+		frameScore += scoreFrame(frameNumber+1);
+
+	// All frames full or at least less than last frame
+	// IF SHOTS ODD OR MORE SHOTS BEYOND FRAME
+	else if (!(numberOfShotsTaken % SHOTS_PER_FRAME) || numberOfShotsTaken - SHOTS_PER_FRAME > (frameNumber * SHOTS_PER_FRAME)){
 		for (size_t shotI = 1 + frameNumber*SHOTS_PER_FRAME;
 			 shotI < frameNumber*SHOTS_PER_FRAME + SHOTS_PER_FRAME; shotI++){
 			frameScore += _shots[shotI];
 		}
+
+		if (frameScore == SPARE && numberOfShotsTaken > ((frameNumber+1)*SHOTS_PER_FRAME))
+			frameScore += _shots[(frameNumber+1)*SHOTS_PER_FRAME];
 	}
 
 	return frameScore;

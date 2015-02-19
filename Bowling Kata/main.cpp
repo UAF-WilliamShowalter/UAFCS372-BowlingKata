@@ -39,6 +39,7 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 
 		// Second frame - after spare
 		gameT.addShot(5);
+		REQUIRE(gameT.score() == 20);
 		gameT.addShot(4);
 		REQUIRE(gameT.score() == 24);
 	}
