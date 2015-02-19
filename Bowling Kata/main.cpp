@@ -4,6 +4,7 @@
 // Include Catch library for testing - using Catch's main.
 #define CATCH_CONFIG_MAIN
 #include "../Catch/single_include/catch.hpp"
+
 #include "BowlingGame.h"
 
 TEST_CASE("Scores a game of bowling.", "BowlingGame")
