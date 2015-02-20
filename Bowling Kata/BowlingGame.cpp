@@ -20,6 +20,8 @@ const unsigned int BowlingGame::score(){
 
 void BowlingGame::addShot(unsigned int pins){
 	_shots.push_back(pins);
+	if (pins == STRIKE && !isFrameFull())
+		_shots.push_back(0);
 }
 
 // Returns score of frame. Score is 0 if frame hasn't been shot yet.
