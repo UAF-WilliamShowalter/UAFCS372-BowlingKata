@@ -214,4 +214,50 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		
 	}
 
+	SECTION("BowlingGame class Mix of Spares / Strikes"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// Five Spares - no bonuses
+		gameT.addShot(0);
+		gameT.addShot(10);
+		gameT.addShot(0);
+		gameT.addShot(10);
+		gameT.addShot(0);
+		gameT.addShot(10);
+		gameT.addShot(0);
+		gameT.addShot(10);
+		gameT.addShot(0);
+		gameT.addShot(10);
+
+		// Three strikes
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+
+		// Spare Spare Strike
+		gameT.addShot(0);
+		gameT.addShot(10);
+		gameT.addShot(0);
+		gameT.addShot(10);
+		gameT.addShot(10);
+
+		// ZERO INDEXED FRAMES
+
+		// Test frames & Score
+		REQUIRE(gameT.scoreFrame(0) == 10);
+		REQUIRE(gameT.scoreFrame(1) == 10);
+		REQUIRE(gameT.scoreFrame(2) == 10);
+		REQUIRE(gameT.scoreFrame(3) == 10);
+		REQUIRE(gameT.scoreFrame(4) == 20);
+		REQUIRE(gameT.scoreFrame(5) == 30);
+		REQUIRE(gameT.scoreFrame(6) == 20);
+		REQUIRE(gameT.scoreFrame(7) == 20);
+		REQUIRE(gameT.scoreFrame(8) == 10);
+		REQUIRE(gameT.scoreFrame(9) == 20);
+		
+		REQUIRE(gameT.score() == 160);
+		
+	}
 }
