@@ -30,15 +30,16 @@ const unsigned int BowlingGame::scoreFrame(unsigned int frameNumber){
 	if (isFrameEmpty(frameNumber))
 		return 0;
 
-	auto frameScore = firstShotFrame(frameNumber);
+	auto frameScore = firstShotInFrame(frameNumber);
 
-	if (frameScore == STRIKE)
-		frameScore += scoreFrame(frameNumber+1);
+	if (frameScore == STRIKE){
+		frameScore += scoreStrikeNextShots(frameNumber);
+	}
 
 	else if (isFrameFull() || shotsNextFrame(frameNumber)){
 		frameScore += nextShotsInFrame(frameNumber);
 		if (isSpare(frameNumber, frameScore))
-			frameScore += firstShotFrame(frameNumber+1);
+			frameScore += firstShotInFrame(frameNumber+1);
 	}
 
 	return frameScore;
@@ -58,7 +59,7 @@ const bool BowlingGame::shotsNextFrame (unsigned int currentFrame){
 	return (_shots.size() - SHOTS_PER_FRAME > (currentFrame * SHOTS_PER_FRAME));
 }
 
-const unsigned int BowlingGame::firstShotFrame (unsigned int frameNumber){
+const unsigned int BowlingGame::firstShotInFrame (unsigned int frameNumber){
 	return _shots[frameNumber*SHOTS_PER_FRAME];
 }
 
@@ -73,4 +74,24 @@ const unsigned int BowlingGame::nextShotsInFrame (unsigned int frameNumber){
 
 const bool BowlingGame::isSpare(unsigned int currentFrame, unsigned int frameScore){
 	return (frameScore == SPARE && _shots.size() > ((currentFrame+1)*SHOTS_PER_FRAME));
+}
+
+const unsigned int BowlingGame::scoreStrikeNextShots(unsigned int currentFrame){
+	unsigned int frameScore = 0;
+
+	if (isFrameEmpty(currentFrame+1))
+		return frameScore;
+
+	frameScore += firstShotInFrame (currentFrame+1);
+
+	if (frameScore == STRIKE){
+		if (isFrameEmpty(currentFrame+2))
+			return frameScore;
+		frameScore += firstShotInFrame (currentFrame+2);
+		return frameScore;
+	}
+
+	if (isFrameFull() || shotsNextFrame(currentFrame+1))
+		frameScore += nextShotsInFrame(currentFrame+1);
+	return frameScore;
 }

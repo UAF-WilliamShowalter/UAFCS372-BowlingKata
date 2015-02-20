@@ -38,8 +38,9 @@ private:
 	const bool isFrameEmpty (unsigned int currentFrame);
 	const bool shotsNextFrame (unsigned int currentFrame);
 	
-	const unsigned int firstShotFrame (unsigned int frameNumber);
+	const unsigned int firstShotInFrame (unsigned int frameNumber);
 	const unsigned int nextShotsInFrame (unsigned int frameNumber);
+	const unsigned int scoreStrikeNextShots (unsigned int currentFrame);
 	const bool isSpare(unsigned int currentFrame, unsigned int frameScore);
 
 

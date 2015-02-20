@@ -85,27 +85,27 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 
 		// Eighth frame - 8 pins, open
 		gameT.addShot(5);
-		REQUIRE(gameT.score() == 122);
+		REQUIRE(gameT.score() == 117);
 		gameT.addShot(3);
-		REQUIRE(gameT.score() == 134);
+		REQUIRE(gameT.score() == 123);
 
 		// Nineth frame - 8 pins, open
 		gameT.addShot(2);
-		REQUIRE(gameT.score() == 136);
+		REQUIRE(gameT.score() == 125);
 		gameT.addShot(6);
-		REQUIRE(gameT.score() == 142);
+		REQUIRE(gameT.score() == 131);
 
 		// Tenth frame - 8 pins, open
 		gameT.addShot(5);
-		REQUIRE(gameT.score() == 147);
+		REQUIRE(gameT.score() == 136);
 		gameT.addShot(3);
-		REQUIRE(gameT.score() == 150);
+		REQUIRE(gameT.score() == 139);
 
 		// 11th frame - off board - shouldn't score more
 		gameT.addShot(2);
-		REQUIRE(gameT.score() == 150);
+		REQUIRE(gameT.score() == 139);
 		gameT.addShot(6);
-		REQUIRE(gameT.score() == 150);
+		REQUIRE(gameT.score() == 139);
 	}
 
 	SECTION("BowlingGame class check frame"){
@@ -148,8 +148,8 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		REQUIRE(gameT.scoreFrame(1) == 8);
 		REQUIRE(gameT.scoreFrame(2) == 18);
 		REQUIRE(gameT.scoreFrame(3) == 8);
-		REQUIRE(gameT.scoreFrame(4) == 38);
-		REQUIRE(gameT.scoreFrame(5) == 28);
+		REQUIRE(gameT.scoreFrame(4) == 30);
+		REQUIRE(gameT.scoreFrame(5) == 25);
 		REQUIRE(gameT.scoreFrame(6) == 18);
 		REQUIRE(gameT.scoreFrame(7) == 8);
 		REQUIRE(gameT.scoreFrame(8) == 8);
