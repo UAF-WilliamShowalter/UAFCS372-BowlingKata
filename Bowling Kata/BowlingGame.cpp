@@ -49,6 +49,8 @@ const bool BowlingGame::isFrameFull (){
 }
 
 const bool BowlingGame::isFrameEmpty (unsigned int currentFrame){
+	if (FRAMES_PER_GAME <= currentFrame)
+		return true;
 	return (_shots.size() <= currentFrame * SHOTS_PER_FRAME);
 }
 
