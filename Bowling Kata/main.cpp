@@ -158,7 +158,7 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 
 	}
 
-	SECTION("BowlingGame class Perfect Game"){
+	SECTION("BowlingGame class Perfect Game Frames"){
 		BowlingGame gameT;
 
 		REQUIRE(gameT.score() == 0);
@@ -187,8 +187,27 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		REQUIRE(gameT.scoreFrame(8) == 30);
 		REQUIRE(gameT.scoreFrame(9) == 30);
 
-		REQUIRE(gameT.score() == 300);
+	}
 
+	SECTION("BowlingGame class Perfect Game Score"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// Strikes in a row
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+
+		REQUIRE(gameT.score() == 300);
+		
 	}
 
 }
