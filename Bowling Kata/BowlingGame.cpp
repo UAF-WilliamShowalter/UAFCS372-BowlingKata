@@ -32,7 +32,7 @@ const unsigned int BowlingGame::scoreFrame(unsigned int frameNumber){
 
 	auto frameScore = firstShotInFrame(frameNumber);
 
-	if (frameScore == STRIKE){
+	if (isStrike(frameNumber,frameScore)){
 		frameScore += scoreStrikeNextShots(frameNumber);
 	}
 
@@ -73,19 +73,25 @@ const unsigned int BowlingGame::nextShotsInFrame (unsigned int frameNumber){
 }
 
 const bool BowlingGame::isSpare(unsigned int currentFrame, unsigned int frameScore){
-	return (frameScore == SPARE && _shots.size() > ((currentFrame+1)*SHOTS_PER_FRAME));
+	return (frameScore == SPARE && shotsNextFrame(currentFrame));
+}
+
+const bool BowlingGame::isStrike(unsigned int currentFrame, unsigned int firstShot){
+	return (firstShot == STRIKE && shotsNextFrame(currentFrame));
 }
 
 const unsigned int BowlingGame::scoreStrikeNextShots(unsigned int currentFrame){
 	unsigned int frameScore = 0;
 
-	if (isFrameEmpty(currentFrame+1))
+	if (isFrameEmpty(currentFrame+1) && !(currentFrame < FRAMES_PER_GAME))
 		return frameScore;
 
-	frameScore += firstShotInFrame (currentFrame+1);
+	unsigned int firstShot = firstShotInFrame (currentFrame+1);
 
-	if (frameScore == STRIKE){
-		if (isFrameEmpty(currentFrame+2))
+	frameScore += firstShot;
+
+	if (firstShot == STRIKE){
+		if (isFrameEmpty(currentFrame+2) && (currentFrame+2) < FRAMES_PER_GAME)
 			return frameScore;
 		frameScore += firstShotInFrame (currentFrame+2);
 		return frameScore;

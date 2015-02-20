@@ -174,6 +174,8 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		gameT.addShot(10);
 		gameT.addShot(10);
 		gameT.addShot(10);
+		gameT.addShot(10); //extra shot 1
+		gameT.addShot(10); //extra shot 2
 
 		// ZERO INDEXED FRAMES
 		REQUIRE(gameT.scoreFrame(0) == 30);
@@ -205,6 +207,8 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		gameT.addShot(10);
 		gameT.addShot(10);
 		gameT.addShot(10);
+		gameT.addShot(10); //extra shot 1
+		gameT.addShot(10); //extra shot 2
 
 		REQUIRE(gameT.score() == 300);
 		
