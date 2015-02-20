@@ -258,6 +258,94 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		REQUIRE(gameT.scoreFrame(9) == 20);
 		
 		REQUIRE(gameT.score() == 160);
-		
+	}
+
+	SECTION("BowlingGame class ALMOST Perfect Game"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// Strikes in a row
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10); //extra shot 1
+		gameT.addShot(9); //extra shot 2
+
+		REQUIRE(gameT.score() == 299);
+	}
+
+	SECTION("BowlingGame class ALMOST Perfect Game 2"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// Strikes in a row
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(9); //extra shot 1
+		gameT.addShot(1); //extra shot 2
+
+		REQUIRE(gameT.score() == 289);
+	}
+
+	SECTION("BowlingGame class ALMOST Perfect Game 3"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// Strikes in a row
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(9);
+		gameT.addShot(1); //extra shot 1
+		gameT.addShot(10); //extra shot 2
+
+		REQUIRE(gameT.score() == 279);
+	}
+
+	SECTION("BowlingGame class ALMOST Perfect Game 4"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// Strikes in a row
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(10);
+		gameT.addShot(9);
+		gameT.addShot(1);
+		gameT.addShot(9);
+		gameT.addShot(1); //extra shot 1
+		gameT.addShot(10); //extra shot 2
+
+		REQUIRE(gameT.score() == 268);
 	}
 }
