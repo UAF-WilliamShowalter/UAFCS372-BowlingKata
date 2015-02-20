@@ -72,6 +72,42 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		// Third frame - 8 pins, open
 		gameT.addShot(2);
 		REQUIRE(gameT.score() == 42);
+
+		// Fourth frame - 1st strike in row
+		gameT.addShot(10);
+		REQUIRE(gameT.score() == 52);
+
+		// Fifth frame - 2nd strike in row
+		gameT.addShot(10);
+		REQUIRE(gameT.score() == 72);
+
+		// Sixth frame - 3rd strike in row
+		gameT.addShot(10);
+		REQUIRE(gameT.score() == 102);
+
+		// Seventh frame - 8 pins, open
+		gameT.addShot(5);
+		REQUIRE(gameT.score() == 122);
+		gameT.addShot(3);
+		REQUIRE(gameT.score() == 134);
+
+		// Eighth frame - 8 pins, open
+		gameT.addShot(2);
+		REQUIRE(gameT.score() == 136);
+		gameT.addShot(6);
+		REQUIRE(gameT.score() == 142);
+
+		// Nineth frame - 8 pins, open
+		gameT.addShot(5);
+		REQUIRE(gameT.score() == 147);
+		gameT.addShot(3);
+		REQUIRE(gameT.score() == 150);
+
+		// Tenth frame - 8 pins, open
+		gameT.addShot(2);
+		REQUIRE(gameT.score() == 152);
+		gameT.addShot(6);
+		REQUIRE(gameT.score() == 158);
 	}
 
 }
