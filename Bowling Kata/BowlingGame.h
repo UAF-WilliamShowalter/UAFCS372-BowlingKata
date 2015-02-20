@@ -34,19 +34,20 @@ public:
 	const unsigned int scoreFrame(unsigned int frameNumber);
 
 private:
+	const unsigned int scoreStrikeNextShots (unsigned int currentFrame);
+	const unsigned int scoreSpareNextShot(unsigned int currentFrame);
+	const unsigned int firstShotInFrame (unsigned int frameNumber);
+	const unsigned int nextShotsInFrame (unsigned int frameNumber);
+
 	const bool isFrameFull ();
 	const bool isFrameEmpty (unsigned int currentFrame);
 	const bool shotsNextFrame (unsigned int currentFrame);
 	
-	const unsigned int firstShotInFrame (unsigned int frameNumber);
-	const unsigned int nextShotsInFrame (unsigned int frameNumber);
-	const unsigned int scoreStrikeNextShots (unsigned int currentFrame);
 	const bool isSpare(unsigned int currentFrame, unsigned int frameScore);
 	const bool isStrike(unsigned int currentFrame, unsigned int frameScore);
 	const bool afterLastFrame(unsigned int frameNumber);
 	const bool lastFrame(unsigned int currentFrame);
-
-
+	
 private:
 	std::vector <unsigned int> _shots;
 };
