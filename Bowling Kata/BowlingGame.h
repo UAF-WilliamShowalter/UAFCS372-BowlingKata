@@ -43,6 +43,8 @@ private:
 	const unsigned int scoreStrikeNextShots (unsigned int currentFrame);
 	const bool isSpare(unsigned int currentFrame, unsigned int frameScore);
 	const bool isStrike(unsigned int currentFrame, unsigned int frameScore);
+	const bool afterLastFrame(unsigned int frameNumber);
+	const bool lastFrame(unsigned int currentFrame);
 
 
 private:

@@ -83,7 +83,7 @@ const bool BowlingGame::isStrike(unsigned int currentFrame, unsigned int firstSh
 const unsigned int BowlingGame::scoreStrikeNextShots(unsigned int currentFrame){
 	unsigned int frameScore = 0;
 
-	if (isFrameEmpty(currentFrame+1) && !(currentFrame < FRAMES_PER_GAME))
+	if (isFrameEmpty(currentFrame+1) && !lastFrame(currentFrame))
 		return frameScore;
 
 	unsigned int firstShot = firstShotInFrame (currentFrame+1);
@@ -91,7 +91,7 @@ const unsigned int BowlingGame::scoreStrikeNextShots(unsigned int currentFrame){
 	frameScore += firstShot;
 
 	if (firstShot == STRIKE){
-		if (isFrameEmpty(currentFrame+2) && (currentFrame+2) < FRAMES_PER_GAME)
+		if (isFrameEmpty(currentFrame+2) && !afterLastFrame(currentFrame+2))
 			return frameScore;
 		frameScore += firstShotInFrame (currentFrame+2);
 		return frameScore;
@@ -100,4 +100,12 @@ const unsigned int BowlingGame::scoreStrikeNextShots(unsigned int currentFrame){
 	if (isFrameFull() || shotsNextFrame(currentFrame+1))
 		frameScore += nextShotsInFrame(currentFrame+1);
 	return frameScore;
+}
+
+const bool BowlingGame::afterLastFrame(unsigned int frameNumber){
+	return !(frameNumber < FRAMES_PER_GAME);
+}
+
+const bool BowlingGame::lastFrame(unsigned int currentFrame){
+	return (currentFrame+1 == FRAMES_PER_GAME);
 }
