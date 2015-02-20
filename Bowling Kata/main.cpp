@@ -61,53 +61,51 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		gameT.addShot(6);
 		REQUIRE(gameT.score() == 16);
 
-		// Second frame - strike
+		// Third frame - strike
 		gameT.addShot(10);
 		REQUIRE(gameT.score() == 26);
 
-		// Third frame - 8 pins, open
+		// Fourth frame - 8 pins, open
 		gameT.addShot(6);
 		REQUIRE(gameT.score() == 38);
-
-		// Third frame - 8 pins, open
 		gameT.addShot(2);
 		REQUIRE(gameT.score() == 42);
 
-		// Fourth frame - 1st strike in row
+		// Fifth frame - 1st strike in row
 		gameT.addShot(10);
 		REQUIRE(gameT.score() == 52);
 
-		// Fifth frame - 2nd strike in row
+		// Sixth frame - 2nd strike in row
 		gameT.addShot(10);
 		REQUIRE(gameT.score() == 72);
 
-		// Sixth frame - 3rd strike in row
+		// Seventh frame - 3rd strike in row
 		gameT.addShot(10);
 		REQUIRE(gameT.score() == 102);
 
-		// Seventh frame - 8 pins, open
+		// Eighth frame - 8 pins, open
 		gameT.addShot(5);
 		REQUIRE(gameT.score() == 122);
 		gameT.addShot(3);
 		REQUIRE(gameT.score() == 134);
 
-		// Eighth frame - 8 pins, open
+		// Nineth frame - 8 pins, open
 		gameT.addShot(2);
 		REQUIRE(gameT.score() == 136);
 		gameT.addShot(6);
 		REQUIRE(gameT.score() == 142);
 
-		// Nineth frame - 8 pins, open
+		// Tenth frame - 8 pins, open
 		gameT.addShot(5);
 		REQUIRE(gameT.score() == 147);
 		gameT.addShot(3);
 		REQUIRE(gameT.score() == 150);
 
-		// Tenth frame - 8 pins, open
+		// 11th frame - off board - shouldn't score more
 		gameT.addShot(2);
-		REQUIRE(gameT.score() == 152);
+		REQUIRE(gameT.score() == 150);
 		gameT.addShot(6);
-		REQUIRE(gameT.score() == 158);
+		REQUIRE(gameT.score() == 150);
 	}
 
 }
