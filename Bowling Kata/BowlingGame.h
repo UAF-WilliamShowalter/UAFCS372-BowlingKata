@@ -39,12 +39,11 @@ private:
 	const unsigned int firstShotInFrame (unsigned int frameNumber);
 	const unsigned int nextShotsInFrame (unsigned int frameNumber);
 
-	const bool isFrameFull ();
+	const bool isLastFrameFull ();
 	const bool isFrameEmpty (unsigned int currentFrame);
-	const bool shotsNextFrame (unsigned int currentFrame);
+	const bool notLastFrame (unsigned int currentFrame);
 	
-	const bool isSpare(unsigned int currentFrame, unsigned int frameScore);
-	const bool isStrike(unsigned int currentFrame, unsigned int frameScore);
+	const bool isSpareOrStrike(unsigned int currentFrame, unsigned int frameScore);
 	const bool afterLastFrame(unsigned int frameNumber);
 	const bool lastFrame(unsigned int currentFrame);
 	
