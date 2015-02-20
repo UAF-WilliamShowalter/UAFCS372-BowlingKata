@@ -26,7 +26,7 @@ void BowlingGame::addShot(unsigned int pins){
 
 // Returns score of frame. Score is 0 if frame hasn't been shot yet.
 // Doesn't score 3rd shot of 10th frame.
-unsigned int BowlingGame::scoreFrame(unsigned int frameNumber){
+const unsigned int BowlingGame::scoreFrame(unsigned int frameNumber){
 	if (isFrameEmpty(frameNumber))
 		return 0;
 

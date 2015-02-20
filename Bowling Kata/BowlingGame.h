@@ -30,9 +30,10 @@ public:
 	const unsigned int score();
 	void addShot (unsigned int pins);
 
-private:
-	unsigned int scoreFrame(unsigned int frameNumber);
+public:
+	const unsigned int scoreFrame(unsigned int frameNumber);
 
+private:
 	const bool isFrameFull ();
 	const bool isFrameEmpty (unsigned int currentFrame);
 	const bool shotsNextFrame (unsigned int currentFrame);

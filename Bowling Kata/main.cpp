@@ -108,4 +108,73 @@ TEST_CASE("Scores a game of bowling.", "BowlingGame")
 		REQUIRE(gameT.score() == 150);
 	}
 
+	SECTION("BowlingGame class check frame"){
+		BowlingGame gameT;
+
+		REQUIRE(gameT.score() == 0);
+
+		// First frame - 8 pins, open
+		gameT.addShot(5);
+		gameT.addShot(3);
+
+		// Second frame - 8 pins, open
+		gameT.addShot(2);
+		gameT.addShot(6);
+
+		// Third frame - strike
+		gameT.addShot(10);
+
+		// Fourth frame - 8 pins, open
+		gameT.addShot(6);
+		gameT.addShot(2);
+
+		// Fifth frame - 1st strike in row
+		gameT.addShot(10);
+		REQUIRE(gameT.score() == 52);
+
+		// Sixth frame - 2nd strike in row
+		gameT.addShot(10);
+		REQUIRE(gameT.score() == 72);
+
+		// Seventh frame - 3rd strike in row
+		gameT.addShot(10);
+		REQUIRE(gameT.score() == 102);
+
+		// Eighth frame - 8 pins, open
+		gameT.addShot(5);
+		REQUIRE(gameT.score() == 122);
+		gameT.addShot(3);
+		REQUIRE(gameT.score() == 134);
+
+		// Nineth frame - 8 pins, open
+		gameT.addShot(2);
+		REQUIRE(gameT.score() == 136);
+		gameT.addShot(6);
+		REQUIRE(gameT.score() == 142);
+
+		// Tenth frame - 8 pins, open
+		gameT.addShot(5);
+		REQUIRE(gameT.score() == 147);
+		gameT.addShot(3);
+		REQUIRE(gameT.score() == 150);
+
+		// 11th frame - off board - shouldn't score more
+		gameT.addShot(2);
+		gameT.addShot(6);
+
+		// ZERO INDEXED FRAMES
+		REQUIRE(gameT.scoreFrame(0) == 8);
+		REQUIRE(gameT.scoreFrame(1) == 8);
+		REQUIRE(gameT.scoreFrame(2) == 18);
+		REQUIRE(gameT.scoreFrame(3) == 8);
+		REQUIRE(gameT.scoreFrame(4) == 38);
+		REQUIRE(gameT.scoreFrame(5) == 28);
+		REQUIRE(gameT.scoreFrame(6) == 18);
+		REQUIRE(gameT.scoreFrame(7) == 8);
+		REQUIRE(gameT.scoreFrame(8) == 8);
+		REQUIRE(gameT.scoreFrame(9) == 8);
+		REQUIRE(gameT.scoreFrame(10) == 0);
+
+	}
+
 }
